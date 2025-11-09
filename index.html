@@ -1,716 +1,232 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EFL Free Tools – Unified Catalogue</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Bridging the Digital Divide - Teacher Empowerment and the future of the English Teacher in the age of AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
-:root{
-  --bg:#f9f9f6;      /* off-white page background */
-  --soft:#fff3b0;    /* pale lemon surfaces */
-  --text:#1b1b1b;
-  --muted:#5b5b5b;
-  --border:#e9e5d6;  /* light neutral border */
-  --accent:#e86a00;  /* deep orange for links */
-  --badge:#ffef9c;   /* lemon badges */
-  --shadow:0 6px 16px rgba(17,24,39,.08);
-}
-html,body{background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;padding:0;line-height:1.55}
-header.page{padding:26px 20px 10px;border-bottom:1px solid var(--border);background:linear-gradient(180deg, rgba(232,106,0,.08), transparent 60%)}
-.container{max-width:1100px;margin:0 auto;padding:20px}
-.brand{display:flex;align-items:center;gap:14px}
-.brand .logo{width:72px;height:72px;border-radius:50%;box-shadow:var(--shadow);object-fit:cover}
-.brand .tagline{margin:2px 0 0;color:var(--muted);font-size:14px}
-.topnav{display:flex;gap:8px;margin:12px 0 6px;flex-wrap:wrap}
-.topnav .tab{display:inline-block;background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:8px 12px;text-decoration:none;color:var(--text);box-shadow:var(--shadow)}
-.topnav .tab:hover{border-color:var(--accent)}
-.topnav .tab.active{border-color:var(--accent);outline:2px solid rgba(232,106,0,.15);font-weight:600}
-.controls{display:grid;grid-template-columns:1fr 220px 220px 180px;gap:12px;align-items:center;margin:16px 0 16px}
-.controls input,.controls select{width:100%;background:var(--soft);color:var(--text);border:1px solid var(--border);border-radius:10px;padding:10px 12px;outline:none}
-.toggle{display:flex;align-items:center;gap:8px;color:var(--muted)}
-section.category{margin:14px 0;border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--bg);box-shadow:var(--shadow)}
-section.category>details>summary{list-style:none;cursor:pointer;padding:14px 16px;font-weight:600;background:var(--soft);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;color:var(--accent)}
-section.category .tools{padding:10px 12px 16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
-.tool-card{border:1px solid var(--border);background:var(--soft);border-radius:14px;padding:12px;box-shadow:var(--shadow)}
-.tool-card h3{margin:0;font-size:18px}
-.tool-card a{color:var(--accent);text-decoration:none}
-.tool-card a:hover{text-decoration:underline}
-.badges{display:flex;gap:6px;flex-wrap:wrap}
-.badge{display:inline-block;padding:3px 8px;border-radius:999px;font-size:12px;border:1px solid var(--border);background:var(--badge);color:var(--muted);white-space:nowrap}
-.bestfor,.typical{margin:8px 0 4px;color:var(--muted)}
-.disclaimer{border:1px solid var(--border);background:#fffbea;color:#5c3d00;border-left:4px solid #f59e0b;padding:12px 14px;border-radius:12px;margin:10px 0 0}
-footer.page{text-align:center;color:var(--muted);margin:24px 0 40px}
-.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-@media(max-width:980px){.controls{grid-template-columns:1fr}}
+  /* Palette 4 — Union Jack (fixed light theme) */
+  :root{
+    --paper:#FFFDF7;     /* page background */
+    --surface:#FFFFFF;   /* cards/panels - White */
+    --ink:#1F2937;       /* primary text - Dark Grey */
+    --muted:#6B7280;     /* secondary text */
+    --border:#E7E5E4;    /* light borders */
+    --accent:#C8102E;    /* primary accent (Red) */
+    --blue:#012169;      /* Union Jack Blue */
+    --red:#C8102E;       /* Union Jack Red */
+    --amber:#F59E0B; --violet:#7C3AED; --rose:#E11D48; --teal:#0D9488; --indigo:#4F46E5;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  /* Applying Roboto font */
+  body{margin:0;background: var(--paper);
+  background-image: linear-gradient(135deg, rgba(1,33,105,.05), rgba(255,253,247,0) 35%, rgba(200,16,46,.05) 100%);
+  background-attachment: fixed;
+  color:var(--ink);font-family:'Plus Jakarta Sans', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif;line-height:1.5}
+  a{color:var(--blue);text-decoration:none}
+  a:hover{color:var(--red);text-decoration:underline}
+
+  /* Header */
+  header{position:static;z-index:auto;background:linear-gradient(90deg, rgba(1,33,105,.06), rgba(255,255,255,0) 50%, rgba(200,16,46,.06)), linear-gradient(180deg,rgba(255,253,247,.95),rgba(255,253,247,.82));border-bottom:3px solid var(--blue)}
+  .bar{max-width:1200px;margin:0 auto;padding:14px 12px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+  .title{font-weight:800;font-size:clamp(20px,2.6vw,30px)}
+  .subtitle{color:var(--muted);font-size:14px}
+
+  /* Tabs (Option A: top tabs) */
+  .tabs{max-width:1200px;margin:16px auto 0;padding:0 12px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .tab{appearance:none;border:1px solid var(--border);background:var(--surface);color:var(--ink);padding:12px 16px;border-radius:999px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;height:44px;line-height:1;box-shadow:none;outline:none;vertical-align:middle} .tab:focus,.tab:focus-visible,.tab:active{outline:none;box-shadow:none}
+  /* Tab selected colors using Union Jack palette */
+  .tab[aria-selected="true"]{border-color:var(--accent);background:rgba(200,16,46,.15)} /* Red accent background */
+  .tab[aria-selected="true"][data-color="home"]{border-color:#9CA3AF;background:rgba(156,163,175,.12)}
+  .tab[aria-selected="true"][data-color="c1"]{border-color:var(--blue);background:rgba(1,33,105,.15)} /* Blue accent */
+  .tab[aria-selected="true"][data-color="c2"]{border-color:var(--red);background:rgba(200,16,46,.15)} /* Red accent */
+  .tab[aria-selected="true"][data-color="c3"]{border-color:var(--violet);background:rgba(124,58,237,.14)}
+  .tab[aria-selected="true"][data-color="c4"]{border-color:var(--rose);background:rgba(225,29,72,.12)}
+  .tab[aria-selected="true"][data-color="c5"]{border-color:var(--teal);background:rgba(13,148,136,.12)}
+  .tab[aria-selected="true"][data-color="c6"]{border-color:var(--indigo);background:rgba(79,70,229,.14)}
+  .tab[data-color="home"][aria-selected="true"]{outline-color:#9CA3AF}
+  .tab[data-color="c1"][aria-selected="true"]{outline-color:var(--blue)}
+  .tab[data-color="c2"][aria-selected="true"]{outline-color:var(--red)} /* Red accent */
+  .tab[data-color="c3"][aria-selected="true"]{outline-color:var(--violet)}
+  .tab[data-color="c4"][aria-selected="true"]{outline-color:var(--rose)}
+  .tab[data-color="c5"][aria-selected="true"]{outline-color:var(--teal)}
+  .tab[data-color="c6"][aria-selected="true"]{outline-color:var(--indigo)}
+
+  /* Panels */
+  main{max-width:1200px;margin:10px auto 0;padding:0 12px 160px}
+  .panel{display:none}
+  .panel.active{display:block}
+
+  /* Home panel cards */
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:14px}
+  details.card summary {list-style: none; cursor: pointer;}
+  details.card summary::-webkit-details-marker {display: none;}
+  .cta{color:var(--blue);text-decoration:none}
+  a:hover{color:var(--red);text-decoration:underline}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .muted{color:var(--muted)}
+  /* QR code size increased (max-width: 500px) and centered in its card. */
+  .qr{ height:auto !important; width:317px !important; width:317px !important; max-width:317px !important;border:1px solid var(--border);border-radius:12px;background:var(--surface);padding:10px; display:block; margin: 0 auto;}
+
+  /* Utilities row */
+  .utils{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;margin:8px 0}
+  .btn{border:1px solid var(--border);background:var(--surface);color:var(--ink);padding:8px 12px;border-radius:10px;cursor:pointer}
+  .btn:hover{border-color:var(--blue);box-shadow:0 0 0 3px rgba(1,33,105,.12);color:var(--blue)}
+  .btn:focus{outline:2px solid rgba(1,33,105,.35);outline-offset:2px}
+
+  /* Status */
+  .status{font-size:14px;color:var(--muted)}
+
+  footer{position:fixed;left:0;right:0;bottom:0;background:var(--blue);color:#FFF;text-align:center;padding:8px 12px;pointer-events:none}
+
+  @media print{@page{size:A4;margin:12mm} header,footer,.tabs,.utils{display:none} main{padding-bottom:0}}
 </style>
-</head>
-<body>
-  <header class="page">
-    <div class="container">
-      <div class="brand">
-        <img class="logo" src="pdhub-logo.png" alt="Panagiotis Domvros EFL Hub logo"/>
-        <div class="brand-text">
-          <h1>EFL Tools - A Suggested List </h1>
-          <p class="tagline">Compiled by Panagiotis Domvros · EFL Hub</p>
-        </div>
-      </div>
-      <nav class="topnav">
-        <a href="index.html" class="tab active">EFL Tools</a>
-        <a href="Royalty_Free_Music_for_Classroom.html" class="tab">Royalty‑Free Music</a>
-        <a href="index%20image%20creation.html" class="tab">Generation of Images</a>
-        <a href="index%20speech%20creation.html" class="tab">Voice &amp; TTS</a>
-      </nav>
-      <p>All tools in one place. Each card includes a clickable link, <strong>Login</strong> (when known), <strong>Levels</strong>, descriptions, and typical EFL uses.</p>
-      <div class="controls" role="region" aria-label="Filters">
-        <label class="sr" for="q">Search</label>
-        <input id="q" type="search" placeholder="Search tools, categories…">
-        <label class="sr" for="cat">Category</label>
-        <select id="cat">
-          <option value="">All categories</option>
-          <option>Annotation &amp; PDFs</option><option>Authoring &amp; design</option><option>Corpora &amp; collocations</option><option>LMS &amp; class management</option><option>Listening</option><option>Polling &amp; backchannel</option><option>Quizzing &amp; games</option><option>Reading &amp; texts</option><option>Speaking &amp; pronunciation</option><option>TTS &amp; accessibility</option><option>Video &amp; recording</option><option>Vocabulary &amp; dictionaries</option><option>Whiteboards &amp; collaboration</option><option>Worksheets &amp; puzzles</option><option>Writing &amp; grammar</option>
-        </select>
-        <label class="sr" for="lvl">Level</label>
-        <select id="lvl">
-          <option value="">All levels</option>
-          <option value="a1">A1</option>
-          <option value="a2">A2</option>
-          <option value="b1">B1</option>
-          <option value="b2">B2</option>
-          <option value="c1">C1</option>
-          <option value="c2">C2</option>
-          <option value="all">All</option>
-        </select>
-        <label class="toggle"><input id="noLoginOnly" type="checkbox"> No‑login only</label>
-      </div>
-      <div class="disclaimer" role="note">
-        <strong>Disclaimer:</strong> Free tiers, feature limits, and conditions of use are subject to change without notice at each provider’s discretion. 
-        Review current Terms of Use, privacy policy, and data agreements before using any tool with learners.
-      </div>
-    </div>
-  </header>
+<style id="uk-flag-strong">
+  body.uk-flag{ background: var(--paper); }
+  header.uk-flag{
+    background: var(--blue) !important;
+    color: #fff !important;
+    border-bottom: 4px solid var(--red) !important;
+  }
+  header.uk-flag a{ color:#fff !important; }
+  header.uk-flag a:hover{ color: var(--red) !important; text-decoration: underline; }
+  .btn.primary{ background: var(--blue); color:#fff; border-color: var(--blue); }
+  .btn.primary:hover{ background: #0f2d7a; border-color:#0f2d7a; }
+</style>
+<style id="credit-white-style">.credit-white{color:#fff !important;}</style>
+<style id="qr-size-override">
+  .qr{ width:317px !important; max-width:317px !important; height:auto !important; }
+</style>
+<style id="qr-card-override">
+  /* Make the QR card span 2 columns where space allows */
+  .grid2 .qr-card{ grid-column: span 2; }
+  /* Center content in the QR card */
+  .grid2 .qr-card h3{ text-align:center; }
+  .grid2 .qr-card a{ display:block; text-align:center; }
+  .grid2 .qr-card img.qr{ display:block; margin:12px auto; width:380px !important; max-width:100% !important; height:auto !important; }
+  /* On narrow screens, let it span only 1 column automatically */
+  @media (max-width: 640px){
+    .grid2 .qr-card{ grid-column: auto / auto; }
+  }
+</style>
+<style>
+    /* Pills for Resources quick links */
+    .pillbar{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+    .btn.pill{border-radius:9999px;padding:8px 14px}
+    </style><style>
+/* Colored pill variants */
+.btn.pill{border-radius:9999px;padding:8px 14px}
+.pillbar{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+/* tone overrides (border + text color) */
+.btn.pill.tone-blue{border-color:var(--blue);color:var(--blue)}
+.btn.pill.tone-red{border-color:var(--red);color:var(--red)}
+.btn.pill.tone-amber{border-color:var(--amber);color:var(--amber)}
+.btn.pill.tone-teal{border-color:var(--teal);color:var(--teal)}
+.btn.pill.tone-violet{border-color:var(--violet);color:var(--violet)}
+.btn.pill.tone-indigo{border-color:var(--indigo);color:var(--indigo)}
+/* keep color on hover too */
+.btn.pill.tone-blue:hover{border-color:var(--blue);color:var(--blue)}
+.btn.pill.tone-red:hover{border-color:var(--red);color:var(--red)}
+.btn.pill.tone-amber:hover{border-color:var(--amber);color:var(--amber)}
+.btn.pill.tone-teal:hover{border-color:var(--teal);color:var(--teal)}
+.btn.pill.tone-violet:hover{border-color:var(--violet);color:var(--violet)}
+.btn.pill.tone-indigo:hover{border-color:var(--indigo);color:var(--indigo)}
+/* Stack pills on phones */
+@media (max-width: 640px){
+  .pillbar{flex-direction:column}
+  .pillbar .pill{width:100%;text-align:center}
+}
+</style><style>
+    /* Compact header overrides */
+    header .bar{display:flex;align-items:center;justify-content:space-between;padding:8px 12px}
+    header .bar > div:first-of-type{display:flex;align-items:center;gap:12px}
+    header .title{font-size:clamp(18px,1.8vw,22px);line-height:1.2;margin:0}
+    header .subtitle{font-size:12px;margin:0}
+    header .logo{height:44px;width:44px;border-radius:50%;margin:0;box-shadow:0 0 0 2px #80002022}
+    </style><style>
+/* Header: place logo, title, subtitle in two-column grid */
+header .bar{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:6px 12px;padding:8px 12px}
+header .bar > div:first-of-type{display:contents} /* flatten children into grid */
+header .logo{grid-column:1;grid-row:1 / span 2;height:44px;width:44px;border-radius:50%;box-shadow:0 0 0 2px #80002022}
+header .title{grid-column:2;grid-row:1;font-size:clamp(18px,1.8vw,22px);line-height:1.2;margin:0}
+header .subtitle{grid-column:2;grid-row:2;font-size:12px;margin:0}
+</style><style>
+/* Make 'Discuss the post' heading match h3 size */
+.summary-discuss{font-size:1.17em;font-weight:700;line-height:1.2;margin:0 0 10px}
+</style></head>
+<body class="uk-flag">
+<header class="uk-flag">
+<div class="bar">
+<div><img alt="Panagiotis Domvros EFL Hub logo" class="logo" src="pdhub-logo.png"/>
+<div class="title">Bridging the Digital Divide - Teacher Empowerment and the future of the English Teacher in the age of AI</div>
+<div class="subtitle"><strong><i><span class="credit-white"><span class="credit-white">Panagiotis Domvros, English and Drama Teacher, All Rights Reserved</span></span></i></strong></div>
+</div>
+</div>
+</header>
+<nav aria-label="Seminar sections" class="tabs" role="tablist">
+<button aria-controls="panel-home" aria-selected="true" class="tab" data-color="home" id="tab-home" role="tab">Home</button>
+<button aria-controls="panel-beyond" aria-selected="false" class="tab" data-color="c6" id="tab-beyond" role="tab">Beyond the &#39;Fun&#39; Factor</button>
+<button aria-controls="panel-c3" aria-selected="false" class="tab" data-color="c3" id="tab-c3" role="tab">ICT Lesson Planner</button>
+<button aria-controls="panel-c4" aria-selected="false" class="tab" data-color="c4" id="tab-c4" role="tab">SAMR Analysis</button><button aria-controls="panel-c5" aria-selected="false" class="tab" data-color="c5" id="tab-c5" role="tab">From Chalkboards to Chatbots</button><button aria-controls="panel-c6" aria-selected="false" class="tab" data-color="c5" id="tab-c6" role="tab">From Rote to Reality</button><button aria-controls="panel-resources" aria-selected="false" class="tab" data-color="c2" id="tab-resources" role="tab">Resources</button>
+<button aria-controls="panel-bibliography" aria-selected="false" class="tab" data-color="c1" id="tab-bibliography" role="tab">Select Bibliography</button></nav>
+<main>
+<section aria-labelledby="tab-home" class="panel active" id="panel-home" role="tabpanel">
+<div class="grid2">
+<div class="card qr-card">
+<h3>The Teacher Make-up</h3>
+<a href="https://domvrosepimorfosi.github.io/teachermakeup/?lng=en" rel="noopener" target="_blank" title="Open Teacher Make‑Up (English)">
+<img alt="QR code: Teacher Make‑Up" class="qr" src="teacher%20make%20up.png" style="width:380px !important; max-width:100% !important; height:auto !important; display:block; margin:12px auto"/>
+</a>
+</div>
+</div>
+<details class="card" style="margin-bottom:12px">
+<summary class="summary-discuss">Discuss the post</summary>
+<figure style="margin:0">
+<img alt="Tweet-style teacher post image for discussion" src="Teacher%20Post.jpeg" style="width:50%;height:auto;border:1px solid var(--border);border-radius:12px;display:block;margin:auto"/>
+</figure>
+</details>
+</section>
+<section aria-labelledby="tab-beyond" class="panel" id="panel-beyond" role="tabpanel"><div class="card" style="padding:0"><iframe src="https://domvrosepimorfosi.github.io/Gamification-EFL-Value/" style="width:100%;height:1200px;border:0" title="Beyond the &#39;Fun&#39; Factor"></iframe></div></section>
+<section aria-labelledby="tab-c3" class="panel" id="panel-c3" role="tabpanel">
+<div class="card" style="padding:0">
+<iframe id="frame-c3" src="https://domvrosepimorfosi.github.io/ICT-LessonPlanner/" style="width:100%;height:1200px;border:0" title="ICT Lesson Planner"></iframe>
+</div>
+</section>
+<section aria-labelledby="tab-c4" class="panel" id="panel-c4" role="tabpanel">
+<div class="card" style="padding:0">
+<iframe id="frame-c4" src="https://domvrosepimorfosi.github.io/SAMR-analysis-sonnet130/" style="width:100%;height:1200px;border:0" title="SAMR Analysis"></iframe>
+</div>
+</section>
+<section aria-labelledby="tab-c5" class="panel" id="panel-c5" role="tabpanel"><div class="card" style="padding:0"><iframe src="https://domvrosepimorfosi.github.io/Chalkboards-to-Chatbots/" style="width:100%;height:1200px;border:0" title="From Chalkboards to Chatbots"></iframe></div></section><section aria-labelledby="tab-c6" class="panel" id="panel-c6" role="tabpanel"><div class="card" style="padding:0"><h4>From Rote to Reality: AI as a Facilitator in EFL Teaching</h4><iframe src="https://domvrosepimorfosi.github.io/Rote-to-Reality/" style="width:100%;height:1000px;border:0" title="From Rote to Reality"></iframe></div></section><section aria-labelledby="tab-resources" class="panel" id="panel-resources" role="tabpanel">
+<div class="card"><h3>Resources</h3><div class="pillbar"><a class="btn pill tone-violet" href="https://domvrosepimorfosi.github.io/using-storybook/" rel="noopener" target="_blank">Using Gemini Storybook</a><a class="btn pill tone-teal" href="https://domvrosepimorfosi.github.io/ict-tools-categorised/" rel="noopener" target="_blank">Tools by Category &amp; Level</a><a class="btn pill tone-indigo" href="https://domvrosepimorfosi.github.io/EFL-tools/" rel="noopener" target="_blank">EFL Tools - A Suggested List</a><a class="btn pill tone-red" href="https://domvrosepimorfosi.github.io/ict-tools-presentation/" rel="noopener" target="_blank">Guide to Some Basic ICT Tools</a><a class="btn pill tone-blue" href="https://domvrosepimorfosi.github.io/mizou-chatbot/" rel="noopener" target="_blank">Setting Up A Mizou Chatbot</a><a class="btn pill tone-amber" href="https://domvrosepimorfosi.github.io/ai-ideation-race/" rel="noopener" target="_blank">AI Ideation Race</a><a class="btn pill tone-indigo" href="https://domvrosepimorfosi.github.io/sonnet-letmecount/" rel="noopener" target="_blank">Let me count the ways</a></div>
+<div class="pillbar"><a class="btn pill tone-red" href="https://domvrosepimorfosi.github.io/AI-classroom-policy/" rel="noopener" target="_blank">AI Classroom Policy - Α Guide</a></div></div>
+</section>
+<section aria-labelledby="tab-bibliography" class="panel" id="panel-bibliography" role="tabpanel"><div class="card" style="padding:0"><iframe src="https://domvrosepimorfosi.github.io/bridging-divide-bibliography/" style="width:100%;height:1200px;border:0" title="Select Bibliography"></iframe></div></section>
 
-  <main class="container">
-    
-    <section class="category">
-      <details>
-        <summary><span class="cat-name">Annotation &amp; PDFs</span> <span class="count">(0)</span></summary>
-        <div class="tools">
-    <article class="tool-card" data-category="Annotation &amp; PDFs" data-levels="all (a1–c2)" data-login="required">
-      <header>
-        <h3><a href="https://www.kamiapp.com" target="_blank" rel="noopener">Kami</a></h3>
-        <div class="badges"><span class="badge">Login: Required (free tier)</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Markup PDFs &amp; worksheets</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Annotate collaboratively</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Annotation &amp; PDFs" data-levels="all (a1–c2)" data-login="required">
-      <header>
-        <h3><a href="https://dochub.com" target="_blank" rel="noopener">DocHub</a></h3>
-        <div class="badges"><span class="badge">Login: Required</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Fill &amp; sign PDFs</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Worksheet completion</div>
-    </article>
-    </div>
-      </details>
-    </section>
-    
-    <section class="category">
-      <details>
-        <summary><span class="cat-name">Authoring &amp; design</span> <span class="count">(0)</span></summary>
-        <div class="tools">
-    <article class="tool-card" data-category="Authoring &amp; design" data-levels="all (a1–c2)" data-login="required">
-      <header>
-        <h3><a href="https://www.canva.com/education/" target="_blank" rel="noopener">Canva for Education</a></h3>
-        <div class="badges"><span class="badge">Login: Required (teacher verification)</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Design &amp; publishing</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Posters, comics, flashcards</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Authoring &amp; design" data-levels="all (a1–c2)" data-login="required">
-      <header>
-        <h3><a href="https://genial.ly" target="_blank" rel="noopener">Genially</a></h3>
-        <div class="badges"><span class="badge">Login: Required</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Interactive presentations</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Boards, games, escape rooms</div>
-    </article>
-    </div>
-      </details>
-    </section>
-    
-    <section class="category">
-      <details>
-        <summary><span class="cat-name">Corpora &amp; collocations</span> <span class="count">(0)</span></summary>
-        <div class="tools">
-    <article class="tool-card" data-category="Corpora &amp; collocations" data-levels="b1–c2" data-login="no login">
-      <header>
-        <h3><a href="https://skell.sketchengine.eu" target="_blank" rel="noopener">SkELL (Sketch Engine)</a></h3>
-        <div class="badges"><span class="badge">Login: No login</span><span class="badge">Levels: B1–C2</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Learner corpus</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Examples &amp; collocations</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Corpora &amp; collocations" data-levels="b1–c2" data-login="no login">
-      <header>
-        <h3><a href="http://www.just-the-word.com" target="_blank" rel="noopener">Just‑The‑Word</a></h3>
-        <div class="badges"><span class="badge">Login: No login</span><span class="badge">Levels: B1–C2</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Collocation finder</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Patterns &amp; choices</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Corpora &amp; collocations" data-levels="b1–c2" data-login="no login">
-      <header>
-        <h3><a href="https://linggle.com" target="_blank" rel="noopener">Linggle</a></h3>
-        <div class="badges"><span class="badge">Login: No login</span><span class="badge">Levels: B1–C2</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> N‑gram pattern checker</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Natural phrasing</div>
-    </article>
-    </div>
-      </details>
-    </section>
-    
-    <section class="category">
-      <details>
-        <summary><span class="cat-name">LMS &amp; class management</span> <span class="count">(0)</span></summary>
-        <div class="tools">
-    <article class="tool-card" data-category="LMS &amp; class management" data-levels="all (a1–c2)" data-login="required">
-      <header>
-        <h3><a href="https://classroom.google.com" target="_blank" rel="noopener">Google Classroom</a></h3>
-        <div class="badges"><span class="badge">Login: Required (teacher); Students join with code</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Assignments, grading, announcements</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Class hub &amp; homework collection</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="LMS &amp; class management" data-levels="all (a1–c2)" data-login="required">
-      <header>
-        <h3><a href="https://moodle.org" target="_blank" rel="noopener">Moodle</a></h3>
-        <div class="badges"><span class="badge">Login: Required (teacher &amp; students)</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Full LMS with plugins</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Host EFL courses with quizzes/H5P</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="LMS &amp; class management" data-levels="all (a1–c2)" data-login="required">
-      <header>
-        <h3><a href="https://www.instructure.com/canvas/try-canvas" target="_blank" rel="noopener">Canvas (Free for Teachers)</a></h3>
-        <div class="badges"><span class="badge">Login: Required (teacher); Students via join link/code</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Course spaces</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Run EFL modules with rubrics</div>
-    </article>
-    </div>
-      </details>
-    </section>
-    
-    <section class="category">
-      <details>
-        <summary><span class="cat-name">Listening</span> <span class="count">(0)</span></summary>
-        <div class="tools">
-    <article class="tool-card" data-category="Listening" data-levels="a2–c1" data-login="no login">
-      <header>
-        <h3><a href="https://elllo.org" target="_blank" rel="noopener">ELLLO</a></h3>
-        <div class="badges"><span class="badge">Login: No login</span><span class="badge">Levels: A2–C1</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Hundreds of graded audio clips</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Transcripts &amp; tasks</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Listening" data-levels="all (a1–c2)" data-login="no login">
-      <header>
-        <h3><a href="https://www.eslvideo.com" target="_blank" rel="noopener">ESL Video</a></h3>
-        <div class="badges"><span class="badge">Login: Required (teacher) to create; Students: no login</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Video quizzes</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Create from YouTube</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Listening" data-levels="all (a1–c2)" data-login="varies">
-      <header>
-        <h3><a href="https://www.bbc.co.uk/learningenglish/english/features/6-minute-english" target="_blank" rel="noopener">BBC 6 Minute English</a></h3>
-        <div class="badges"><span class="badge">Login: varies</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Short topical podcasts</div>
-      <div class="typical"><strong>Typical EFL use:</strong> B1‑B2 vocab</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Listening" data-levels="all (a1–c2)" data-login="varies">
-      <header>
-        <h3><a href="https://lyricstraining.com" target="_blank" rel="noopener">LyricsTraining</a></h3>
-        <div class="badges"><span class="badge">Login: varies</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Music gap‑fills</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Pronunciation &amp; chunking</div>
-    </article>
-    </div>
-      </details>
-    </section>
-    
-    <section class="category">
-      <details>
-        <summary><span class="cat-name">Polling &amp; backchannel</span> <span class="count">(0)</span></summary>
-        <div class="tools">
-    <article class="tool-card" data-category="Polling &amp; backchannel" data-levels="all (a1–c2)" data-login="required">
-      <header>
-        <h3><a href="https://www.mentimeter.com" target="_blank" rel="noopener">Mentimeter</a></h3>
-        <div class="badges"><span class="badge">Login: Required (teacher)</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Live polls &amp; clouds</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Brainstorms, reflections</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Polling &amp; backchannel" data-levels="all (a1–c2)" data-login="required">
-      <header>
-        <h3><a href="https://www.slido.com" target="_blank" rel="noopener">Slido</a></h3>
-        <div class="badges"><span class="badge">Login: Required (teacher)</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Q&amp;A, polls</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Backchannel during talks</div>
-    </article>
-    </div>
-      </details>
-    </section>
-    
-    <section class="category">
-      <details>
-        <summary><span class="cat-name">Quizzing &amp; games</span> <span class="count">(0)</span></summary>
-        <div class="tools">
-    <article class="tool-card" data-category="Quizzing &amp; games" data-levels="all (a1–c2)" data-login="no login">
-      <header>
-        <h3><a href="https://kahoot.com" target="_blank" rel="noopener">Kahoot!</a></h3>
-        <div class="badges"><span class="badge">Login: Required (teacher); Students join by PIN (no login)</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Live quiz games</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Warm‑ups, vocab races, grammar checks</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Quizzing &amp; games" data-levels="all (a1–c2)" data-login="no login">
-      <header>
-        <h3><a href="https://quizizz.com" target="_blank" rel="noopener">Quizizz (Wayground)</a></h3>
-        <div class="badges"><span class="badge">Login: Required (teacher); Students join by code (no login)</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Live/async quizzes</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Homework sets, vocab drills</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Quizzing &amp; games" data-levels="all (a1–c2)" data-login="no login">
-      <header>
-        <h3><a href="https://h5p.org" target="_blank" rel="noopener">H5P</a></h3>
-        <div class="badges"><span class="badge">Login: Required (author); Learners: no login</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Interactive content types</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Cloze, interactive video, audio tasks</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Quizzing &amp; games" data-levels="all (a1–b2)" data-login="no login">
-      <header>
-        <h3><a href="https://wordwall.net" target="_blank" rel="noopener">Wordwall</a></h3>
-        <div class="badges"><span class="badge">Login: Required (teacher); Students via link (no login)</span><span class="badge">Levels: All (A1–B2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Activity templates</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Matching, anagrams, word games</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Quizzing &amp; games" data-levels="all (a1–c2)" data-login="varies">
-      <header>
-        <h3><a href="https://www.socrative.com" target="_blank" rel="noopener">Socrative</a></h3>
-        <div class="badges"><span class="badge">Login: varies</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Exit tickets, quizzes</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Quick checks for understanding</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Quizzing &amp; games" data-levels="all (a1–c2)" data-login="varies">
-      <header>
-        <h3><a href="https://get.plickers.com" target="_blank" rel="noopener">Plickers</a></h3>
-        <div class="badges"><span class="badge">Login: varies</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Paper cards + teacher app</div>
-      <div class="typical"><strong>Typical EFL use:</strong> No‑device polling for classes</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Quizzing &amp; games" data-levels="all (a1–c2)" data-login="varies">
-      <header>
-        <h3><a href="https://www.blooket.com" target="_blank" rel="noopener">Blooket</a></h3>
-        <div class="badges"><span class="badge">Login: varies</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Game‑based practice</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Vocabulary games</div>
-    </article>
-    </div>
-      </details>
-    </section>
-    
-    <section class="category">
-      <details>
-        <summary><span class="cat-name">Reading &amp; texts</span> <span class="count">(0)</span></summary>
-        <div class="tools">
-    <article class="tool-card" data-category="Reading &amp; texts" data-levels="a2–c1" data-login="optional">
-      <header>
-        <h3><a href="https://www.commonlit.org" target="_blank" rel="noopener">CommonLit</a></h3>
-        <div class="badges"><span class="badge">Login: Optional for browsing; Required to assign/track</span><span class="badge">Levels: A2–C1</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Leveled readings + questions</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Reading strategies</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Reading &amp; texts" data-levels="a2–b2" data-login="optional">
-      <header>
-        <h3><a href="https://www.readworks.org" target="_blank" rel="noopener">ReadWorks</a></h3>
-        <div class="badges"><span class="badge">Login: Optional for browsing; Required to assign/track</span><span class="badge">Levels: A2–B2</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Reading passages + audio</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Assign nonfiction</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Reading &amp; texts" data-levels="all (a1–c2; 7 levels)" data-login="no login">
-      <header>
-        <h3><a href="https://breakingnewsenglish.com" target="_blank" rel="noopener">Breaking News English</a></h3>
-        <div class="badges"><span class="badge">Login: No login</span><span class="badge">Levels: All (A1–C2; 7 levels)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Graded news lessons</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Multi‑level tasks</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Reading &amp; texts" data-levels="a1–b1" data-login="no login">
-      <header>
-        <h3><a href="https://www.newsinlevels.com" target="_blank" rel="noopener">News in Levels</a></h3>
-        <div class="badges"><span class="badge">Login: No login</span><span class="badge">Levels: A1–B1</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> News at 3 levels</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Daily listening/reading</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Reading &amp; texts" data-levels="a2–b2" data-login="no login">
-      <header>
-        <h3><a href="https://learningenglish.voanews.com" target="_blank" rel="noopener">VOA Learning English</a></h3>
-        <div class="badges"><span class="badge">Login: No login</span><span class="badge">Levels: A2–B2</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> U.S. news for learners</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Slow news, vocab</div>
-    </article>
-    </div>
-      </details>
-    </section>
-    
-    <section class="category">
-      <details>
-        <summary><span class="cat-name">Speaking &amp; pronunciation</span> <span class="count">(0)</span></summary>
-        <div class="tools">
-    <article class="tool-card" data-category="Speaking &amp; pronunciation" data-levels="all (a1–c2)" data-login="no login">
-      <header>
-        <h3><a href="https://vocaroo.com" target="_blank" rel="noopener">Vocaroo</a></h3>
-        <div class="badges"><span class="badge">Login: No login</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> One‑click voice recorder</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Speaking homework</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Speaking &amp; pronunciation" data-levels="all (a1–c2)" data-login="no login">
-      <header>
-        <h3><a href="https://forvo.com" target="_blank" rel="noopener">Forvo</a></h3>
-        <div class="badges"><span class="badge">Login: No login for listening</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Native pronunciations</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Model vocab &amp; minimal pairs</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Speaking &amp; pronunciation" data-levels="a2–c2" data-login="no login">
-      <header>
-        <h3><a href="https://youglish.com" target="_blank" rel="noopener">YouGlish</a></h3>
-        <div class="badges"><span class="badge">Login: No login</span><span class="badge">Levels: A2–C2</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Pronunciation in context</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Examples from real videos</div>
-    </article>
-    </div>
-      </details>
-    </section>
-    
-    <section class="category">
-      <details>
-        <summary><span class="cat-name">TTS &amp; accessibility</span> <span class="count">(0)</span></summary>
-        <div class="tools">
-    <article class="tool-card" data-category="TTS &amp; accessibility" data-levels="all (a1–c2)" data-login="no login">
-      <header>
-        <h3><a href="https://www.naturalreaders.com/online/" target="_blank" rel="noopener">Natural Readers (Web)</a></h3>
-        <div class="badges"><span class="badge">Login: No login for basic use</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Text‑to‑speech</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Model reading, support</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="TTS &amp; accessibility" data-levels="all (a1–c2)" data-login="no login">
-      <header>
-        <h3><a href="https://ttsreader.com" target="_blank" rel="noopener">TTSReader</a></h3>
-        <div class="badges"><span class="badge">Login: No login</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Text‑to‑speech in browser</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Listening &amp; dictation</div>
-    </article>
-    </div>
-      </details>
-    </section>
-    
-    <section class="category">
-      <details>
-        <summary><span class="cat-name">Video &amp; recording</span> <span class="count">(0)</span></summary>
-        <div class="tools">
-    <article class="tool-card" data-category="Video &amp; recording" data-levels="all (a1–c2)" data-login="required">
-      <header>
-        <h3><a href="https://edpuzzle.com" target="_blank" rel="noopener">Edpuzzle</a></h3>
-        <div class="badges"><span class="badge">Login: Required (teacher &amp; students for tracking)</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Interactive video</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Embedded questions</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Video &amp; recording" data-levels="all (a1–c2)" data-login="required">
-      <header>
-        <h3><a href="https://www.loom.com/education" target="_blank" rel="noopener">Loom for Education</a></h3>
-        <div class="badges"><span class="badge">Login: Required</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Screen/webcam recorder</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Video feedback</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Video &amp; recording" data-levels="all (a1–c2)" data-login="no login">
-      <header>
-        <h3><a href="https://obsproject.com" target="_blank" rel="noopener">OBS Studio</a></h3>
-        <div class="badges"><span class="badge">Login: No login</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Screen recording</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Record lessons</div>
-    </article>
-    </div>
-      </details>
-    </section>
-    
-    <section class="category">
-      <details>
-        <summary><span class="cat-name">Vocabulary &amp; dictionaries</span> <span class="count">(0)</span></summary>
-        <div class="tools">
-    <article class="tool-card" data-category="Vocabulary &amp; dictionaries" data-levels="all (a1–c2)" data-login="required">
-      <header>
-        <h3><a href="https://quizlet.com" target="_blank" rel="noopener">Quizlet</a></h3>
-        <div class="badges"><span class="badge">Login: Required (teacher); students can practice without login</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Flashcards &amp; tests</div>
-      <div class="typical"><strong>Typical EFL use:</strong> CEFR‑tagged sets, collocations</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Vocabulary &amp; dictionaries" data-levels="all (a1–c2)" data-login="no login">
-      <header>
-        <h3><a href="https://apps.ankiweb.net" target="_blank" rel="noopener">Anki</a></h3>
-        <div class="badges"><span class="badge">Login: Optional (account to sync); local use no login</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Spaced‑repetition flashcards</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Custom decks</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Vocabulary &amp; dictionaries" data-levels="all (a1–c2)" data-login="varies">
-      <header>
-        <h3><a href="https://dictionary.cambridge.org/dictionary/learner-english/" target="_blank" rel="noopener">Cambridge Learner’s Dictionary</a></h3>
-        <div class="badges"><span class="badge">Login: varies</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Learner dictionary</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Definitions, audio</div>
-    </article>
-    </div>
-      </details>
-    </section>
-    
-    <section class="category">
-      <details>
-        <summary><span class="cat-name">Whiteboards &amp; collaboration</span> <span class="count">(0)</span></summary>
-        <div class="tools">
-    <article class="tool-card" data-category="Whiteboards &amp; collaboration" data-levels="all (a1–c2)" data-login="optional">
-      <header>
-        <h3><a href="https://www.whiteboard.chat" target="_blank" rel="noopener">Whiteboard.chat</a></h3>
-        <div class="badges"><span class="badge">Login: Optional (guest rooms); account to save</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Teacher/student boards</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Individual boards, export</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Whiteboards &amp; collaboration" data-levels="all (a1–c2)" data-login="no login">
-      <header>
-        <h3><a href="https://excalidraw.com" target="_blank" rel="noopener">Excalidraw</a></h3>
-        <div class="badges"><span class="badge">Login: No login</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Sketching &amp; whiteboard</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Storyboard &amp; vocab maps</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Whiteboards &amp; collaboration" data-levels="b1–c2" data-login="required">
-      <header>
-        <h3><a href="https://web.hypothes.is" target="_blank" rel="noopener">Hypothesis</a></h3>
-        <div class="badges"><span class="badge">Login: Required (accounts for private groups)</span><span class="badge">Levels: B1–C2</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Social annotation</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Web/PDF close reading</div>
-    </article>
-    </div>
-      </details>
-    </section>
-    
-    <section class="category">
-      <details>
-        <summary><span class="cat-name">Worksheets &amp; puzzles</span> <span class="count">(0)</span></summary>
-        <div class="tools">
-    <article class="tool-card" data-category="Worksheets &amp; puzzles" data-levels="all (a1–c2)" data-login="optional">
-      <header>
-        <h3><a href="https://crosswordlabs.com" target="_blank" rel="noopener">Crossword Labs</a></h3>
-        <div class="badges"><span class="badge">Login: Optional (account to save)</span><span class="badge">Levels: All (A1–C2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Crossword generator</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Vocab &amp; definitions</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Worksheets &amp; puzzles" data-levels="all (a1–b2)" data-login="optional">
-      <header>
-        <h3><a href="https://flippity.net" target="_blank" rel="noopener">Flippity</a></h3>
-        <div class="badges"><span class="badge">Login: Optional (Google account to author)</span><span class="badge">Levels: All (A1–B2)</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Sheets → games</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Randomizer, bingo, flashcards</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Worksheets &amp; puzzles" data-levels="a1–b1" data-login="no login">
-      <header>
-        <h3><a href="https://wordsearchlabs.com" target="_blank" rel="noopener">Word Search Labs</a></h3>
-        <div class="badges"><span class="badge">Login: No login</span><span class="badge">Levels: A1–B1</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Word search generator</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Vocab recycling</div>
-    </article>
-    </div>
-      </details>
-    </section>
-    
-    <section class="category">
-      <details>
-        <summary><span class="cat-name">Writing &amp; grammar</span> <span class="count">(0)</span></summary>
-        <div class="tools">
-    <article class="tool-card" data-category="Writing &amp; grammar" data-levels="a2–b2" data-login="required">
-      <header>
-        <h3><a href="https://www.quill.org" target="_blank" rel="noopener">Quill.org</a></h3>
-        <div class="badges"><span class="badge">Login: Required (teacher &amp; students)</span><span class="badge">Levels: A2–B2</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Short writing/grammar activities</div>
-      <div class="typical"><strong>Typical EFL use:</strong> 10–15 minute practice</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Writing &amp; grammar" data-levels="a2–c1" data-login="optional">
-      <header>
-        <h3><a href="https://writeandimprove.com" target="_blank" rel="noopener">Write &amp; Improve (Cambridge)</a></h3>
-        <div class="badges"><span class="badge">Login: Optional (guest); Account saves progress</span><span class="badge">Levels: A2–C1</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Instant CEFR feedback</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Draft‑revise cycles</div>
-    </article>
-    
-
-    <article class="tool-card" data-category="Writing &amp; grammar" data-levels="b1–c2" data-login="no login">
-      <header>
-        <h3><a href="https://hemingwayapp.com" target="_blank" rel="noopener">Hemingway Editor</a></h3>
-        <div class="badges"><span class="badge">Login: No login</span><span class="badge">Levels: B1–C2</span></div>
-      </header>
-      <div class="bestfor"><strong>Best for:</strong> Readability tool</div>
-      <div class="typical"><strong>Typical EFL use:</strong> Clarity &amp; concision</div>
-    </article>
-    </div>
-      </details>
-    </section>
-    
-  </main>
-
-  <footer class="page">
-    <p>✨✍️ Created by Panagiotis Domvros, English and Drama Teacher, All Rights Reserved ✍️✨</p>
-  </footer>
-
+</main>
+<footer>✨✍️ Created by <span class="credit-white"><span class="credit-white">Panagiotis Domvros, English and Drama Teacher, All Rights Reserved</span></span> ✍️✨</footer>
 <script>
-  const q = document.getElementById('q');
-  const cat = document.getElementById('cat');
-  const lvl = document.getElementById('lvl');
-  const noLoginOnly = document.getElementById('noLoginOnly');
-
-  function updateCounts() {
-    document.querySelectorAll('section.category').forEach(section => {
-      const cards = section.querySelectorAll('.tool-card');
-      let visible = 0;
-      cards.forEach(c => { if (c.style.display !== 'none') visible++; });
-      const countSpan = section.querySelector('summary .count');
-      if (countSpan) countSpan.textContent = `(${visible})`;
-    });
+  // Tabs
+  const tabs=[...document.querySelectorAll('.tab[role="tab"]')];
+  const panels=[...document.querySelectorAll('.panel')];
+  function activate(id){
+    tabs.forEach(t=>t.setAttribute('aria-selected', t.id===`tab-${id}`?'true':'false'));
+    panels.forEach(p=>p.classList.toggle('active', p.id===`panel-${id}`));
+    window.scrollTo({top:0,behavior:'smooth'});
   }
+  tabs.forEach(t=>t.addEventListener('click',()=>activate(t.id.replace('tab-',''))));
+  document.querySelectorAll('[data-jump]').forEach(btn=>btn.addEventListener('click',()=>activate(btn.getAttribute('data-jump').replace('#panel-',''))));
 
-  function filter() {
-    const term = (q.value || '').toLowerCase();
-    const categoryWanted = cat.value;
-    const levelWanted = (lvl && (lvl.value || '')).toLowerCase();
-    const noLogin = !!(noLoginOnly && noLoginOnly.checked);
-
-    document.querySelectorAll('.tool-card').forEach(card => {
-      const text = (card.innerText || '').toLowerCase();
-      const c = (card.dataset.category || '');
-      const levels = (card.dataset.levels || '').toLowerCase();
-      const login = (card.dataset.login || '').toLowerCase();
-
-      const okTerm = !term || text.includes(term);
-      const okCat = !categoryWanted || c === categoryWanted;
-      const okLvl = !levelWanted || levelWanted === 'all' || levels.includes(levelWanted) || text.includes(levelWanted);
-      const okLogin = !noLogin || login.includes('no login');
-
-      card.style.display = (okTerm && okCat && okLvl && okLogin) ? '' : 'none';
-    });
-
-    updateCounts();
-  }
-
-  q.addEventListener('input', filter);
-  cat.addEventListener('change', filter);
-  lvl.addEventListener('change', filter);
-  if (noLoginOnly) noLoginOnly.addEventListener('change', filter);
-  document.addEventListener('DOMContentLoaded', filter);
+  // Print current tab (print iframe if present)
+  document.getElementById('printCurrent').addEventListener('click',()=>{
+    const active=document.querySelector('.panel.active');
+    const iframe=active?active.querySelector('iframe'):null;
+    if(iframe && iframe.contentWindow){ try{ iframe.contentWindow.focus(); iframe.contentWindow.print(); return; }catch(e){} }
+    window.print();
+  });
 </script>
 </body>
 </html>
