@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Royalty‑Free Music for Classroom Projects</title>
+<style>
+:root{
+  --bg:#f9f9f6;      /* off-white page background */
+  --soft:#fff3b0;    /* pale lemon surfaces */
+  --text:#1b1b1b;
+  --muted:#5b5b5b;
+  --border:#e9e5d6;  /* light neutral border */
+  --accent:#e86a00;  /* deep orange for links */
+  --badge:#ffef9c;   /* lemon badges */
+  --shadow:0 6px 16px rgba(17,24,39,.08);
+}
+html, body { background: var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; margin: 0; padding: 0; line-height: 1.55; }
+header.page { padding: 20px; border-bottom: 1px solid var(--border); 
+  background: linear-gradient(180deg, rgba(232,106,0,.08), transparent 60%);}
+.container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+.brand { display:flex; align-items:center; gap:14px; }
+.brand h1 { margin: 0 0 4px; font-size: clamp(24px, 3.4vw, 38px); }
+.brand p { margin: 0; color: var(--muted); }
+.disclaimer { border: 1px solid var(--border); background: #fffbea; color: #5c3d00; border-left: 4px solid #f59e0b; padding: 12px 14px; border-radius: 12px; margin: 10px 0 0; }
+.controls { display:grid; grid-template-columns: 1fr 220px 220px; gap: 12px; margin: 16px 0 8px; }
+.controls input, .controls select { background: var(--soft); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; outline: none; }
+.grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 12px; }
+.card { border: 1px solid var(--border); border-radius: 14px; background: var(--soft); box-shadow: var(--shadow); padding: 12px; }
+.card h3 { margin: 0 0 4px; font-size: 18px; }
+.card a { color: var(--accent); text-decoration: none; }
+.card a:hover { text-decoration: underline; }
+.badges { display:flex; gap:6px; flex-wrap: wrap; margin: 6px 0; }
+.badge { font-size: 12px; background: var(--badge); padding: 3px 8px; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); }
+.meta { color: var(--muted); margin: 6px 0; }
+footer.page { text-align:center; color: var(--muted); margin: 24px 0 40px; }
+.nav { display:flex; gap:8px; margin-top: 8px; }
+.nav a.btn { display:inline-block; background:#ffffff; border:1px solid var(--border); border-radius: 10px; padding:8px 12px; text-decoration:none; color: var(--text); box-shadow: var(--shadow); }
+.nav a.btn:hover { border-color: var(--accent); }
+@media (max-width: 980px) { .controls { grid-template-columns: 1fr; } }
+
+.topnav{display:flex;gap:8px;margin:12px 0 6px;flex-wrap:wrap}
+.topnav .tab{display:inline-block;background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:8px 12px;text-decoration:none;color:var(--text);box-shadow:var(--shadow)}
+.topnav .tab:hover{border-color:var(--accent)}
+.topnav .tab.active{border-color:var(--accent);outline:2px solid rgba(232,106,0,.12);font-weight:600}
+
+
+/* accent links */
+a{color:var(--accent)}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<header class="page">
+  <div class="container">
+    <div class="brand">
+      <div>
+        <h1>Royalty‑Free Music for Classroom Projects</h1>
+        <p>Curated links with license notes, attribution tips, and classroom ideas.</p>
+        <div class="nav"><a class="btn" href="#list">Jump to list</a></div>
+<nav class="topnav"><a href="index.html" class="tab">EFL Tools</a><a href="Royalty_Free_Music_for_Classroom.html" class="tab active">Royalty‑Free Music</a><a href="index%20image%20creation.html" class="tab">Generation of Images</a><a href="index%20speech%20creation.html" class="tab">Voice &amp; TTS</a></nav>
+      </div>
+    </div>
+    <div class="disclaimer" role="note">
+      <strong>Important:</strong> Free tiers, feature limits, and license terms may change at any time at the provider’s discretion. 
+      Always read the track’s current license and your institution’s policies before publishing student work.
+    </div>
+  </div>
+</header>
+
+<main class="container" id="list">
+  <div class="controls" role="region" aria-label="Filters">
+    <input id="q" type="search" placeholder="Search sites, license terms, notes…">
+    <select id="license">
+      <option value="">All licenses</option>
+      <option>Public domain</option>
+      <option>CC0</option>
+      <option>Creative Commons</option>
+      <option>No attribution required</option>
+      <option>Attribution required</option>
+    </select>
+    <select id="login">
+      <option value="">Any login</option>
+      <option>No login</option>
+      <option>Optional</option>
+      <option>Required</option>
+    </select>
+  </div>
+
+  <section class="grid">
+    
+    <article class="card" data-login="optional (download without login)" data-license="free to use in videos; some tracks require attribution some tracks: attribution required (check track info)">
+      <h3><a href="https://studio.youtube.com/channel/UC/music" target="_blank" rel="noopener">YouTube Audio Library</a></h3>
+      <div class="badges">
+        <span class="badge">License: Free to use in videos; some tracks require attribution</span>
+        <span class="badge">Login: Optional (download without login)</span>
+      </div>
+      <div class="meta"><strong>Best for:</strong> Background/intro music for class videos and student projects</div>
+      <p><strong>Attribution:</strong> Some tracks: Attribution required (check track info)</p>
+      <p>Filter by mood, genre, duration; includes sound effects</p>
+    </article>
+
+    <article class="card" data-login="no login to browse; account for playlists" data-license="creative commons & public‑domain tracks (varies by song) often required — check each track’s cc license">
+      <h3><a href="https://freemusicarchive.org" target="_blank" rel="noopener">Free Music Archive (FMA)</a></h3>
+      <div class="badges">
+        <span class="badge">License: Creative Commons & public‑domain tracks (varies by song)</span>
+        <span class="badge">Login: No login to browse; account for playlists</span>
+      </div>
+      <div class="meta"><strong>Best for:</strong> Wide variety by genre; discovery via tags and charts</div>
+      <p><strong>Attribution:</strong> Often required — check each track’s CC license</p>
+      <p>Verify license on the individual track page before use</p>
+    </article>
+
+    <article class="card" data-login="no login" data-license="mixkit license – free for commercial/educational use, no attribution required not required (attribution appreciated)">
+      <h3><a href="https://mixkit.co/free-stock-music/" target="_blank" rel="noopener">Mixkit</a></h3>
+      <div class="badges">
+        <span class="badge">License: Mixkit License – free for commercial/educational use, no attribution required</span>
+        <span class="badge">Login: No login</span>
+      </div>
+      <div class="meta"><strong>Best for:</strong> Polished stock music for intros, trailers, slideshows</div>
+      <p><strong>Attribution:</strong> Not required (attribution appreciated)</p>
+      <p>Also offers free sound effects and video clips</p>
+    </article>
+
+    <article class="card" data-login="no login" data-license="creative commons (attribution) or paid license for no attribution required under cc by">
+      <h3><a href="https://incompetech.com/music/royalty-free/" target="_blank" rel="noopener">Incompetech (Kevin MacLeod)</a></h3>
+      <div class="badges">
+        <span class="badge">License: Creative Commons (Attribution) or paid license for no attribution</span>
+        <span class="badge">Login: No login</span>
+      </div>
+      <div class="meta"><strong>Best for:</strong> Genre‑tagged background music; classroom-friendly catalog</div>
+      <p><strong>Attribution:</strong> Required under CC BY</p>
+      <p>Familiar tracks widely used in education videos</p>
+    </article>
+
+    <article class="card" data-login="no login to download free mp3" data-license="free with attribution for web/youtube; paid options for broader use required under free use">
+      <h3><a href="https://www.bensound.com/royalty-free-music" target="_blank" rel="noopener">Bensound</a></h3>
+      <div class="badges">
+        <span class="badge">License: Free with attribution for web/YouTube; paid options for broader use</span>
+        <span class="badge">Login: No login to download free MP3</span>
+      </div>
+      <div class="meta"><strong>Best for:</strong> Corporate/background styles; instrumental focus</div>
+      <p><strong>Attribution:</strong> Required under free use</p>
+      <p>Check each track’s permitted uses under the free license</p>
+    </article>
+
+    <article class="card" data-login="optional to browse; account for favorites & downloads" data-license="creative commons for personal projects; jamendo licensing for commercial varies by track (cc by/nc etc.)">
+      <h3><a href="https://www.jamendo.com/start" target="_blank" rel="noopener">Jamendo</a></h3>
+      <div class="badges">
+        <span class="badge">License: Creative Commons for personal projects; Jamendo Licensing for commercial</span>
+        <span class="badge">Login: Optional to browse; account for favorites & downloads</span>
+      </div>
+      <div class="meta"><strong>Best for:</strong> Indie artists; mood‑based playlists</div>
+      <p><strong>Attribution:</strong> Varies by track (CC BY/NC etc.)</p>
+      <p>For school/public uploads, choose tracks with appropriate CC terms</p>
+    </article>
+
+    <article class="card" data-login="required to download" data-license="cc0, cc by, cc by‑nc (varies per file) varies; many require attribution">
+      <h3><a href="https://freesound.org" target="_blank" rel="noopener">Freesound</a></h3>
+      <div class="badges">
+        <span class="badge">License: CC0, CC BY, CC BY‑NC (varies per file)</span>
+        <span class="badge">Login: Required to download</span>
+      </div>
+      <div class="meta"><strong>Best for:</strong> Sound effects & ambient loops to layer under narration</div>
+      <p><strong>Attribution:</strong> Varies; many require attribution</p>
+      <p>Always check license on each clip; cite contributors when required</p>
+    </article>
+
+    <article class="card" data-login="optional to browse" data-license="public domain recordings & scores (pd) and some cc not required for pd; recommended where possible">
+      <h3><a href="https://musopen.org/music/" target="_blank" rel="noopener">Musopen</a></h3>
+      <div class="badges">
+        <span class="badge">License: Public domain recordings & scores (PD) and some CC</span>
+        <span class="badge">Login: Optional to browse</span>
+      </div>
+      <div class="meta"><strong>Best for:</strong> Classical music for history/literature projects</div>
+      <p><strong>Attribution:</strong> Not required for PD; recommended where possible</p>
+      <p>Great for Vivaldi, Beethoven, etc. without copyright issues</p>
+    </article>
+
+    <article class="card" data-login="optional (download without account)" data-license="pixabay license – free, no attribution required not required (attribution appreciated)">
+      <h3><a href="https://pixabay.com/music/" target="_blank" rel="noopener">Pixabay Music</a></h3>
+      <div class="badges">
+        <span class="badge">License: Pixabay License – free, no attribution required</span>
+        <span class="badge">Login: Optional (download without account)</span>
+      </div>
+      <div class="meta"><strong>Best for:</strong> Background tracks across many genres; easy filtering</div>
+      <p><strong>Attribution:</strong> Not required (attribution appreciated)</p>
+      <p>Also includes SFX; license prohibits compiling tracks for distribution</p>
+    </article>
+
+    <article class="card" data-login="required" data-license="free tier with attribution required; paid tier removes attribution limits required on free plan">
+      <h3><a href="https://uppbeat.io" target="_blank" rel="noopener">Upbeat</a></h3>
+      <div class="badges">
+        <span class="badge">License: Free tier with attribution required; paid tier removes attribution limits</span>
+        <span class="badge">Login: Required</span>
+      </div>
+      <div class="meta"><strong>Best for:</strong> Modern, polished tracks curated for creators</div>
+      <p><strong>Attribution:</strong> Required on free plan</p>
+      <p>Use the provided credit link in descriptions or slides</p>
+    </article>
+
+    <article class="card" data-login="no login to browse/download" data-license="creative commons (varies per track) usually required (cc by/nc etc.)">
+      <h3><a href="http://ccmixter.org" target="_blank" rel="noopener">ccMixter</a></h3>
+      <div class="badges">
+        <span class="badge">License: Creative Commons (varies per track)</span>
+        <span class="badge">Login: No login to browse/download</span>
+      </div>
+      <div class="meta"><strong>Best for:</strong> Remixes and stems; creative classroom sound design</div>
+      <p><strong>Attribution:</strong> Usually required (CC BY/NC etc.)</p>
+      <p>Use filters for 'Free for commercial use' or 'Instrumental'</p>
+    </article>
+
+    <article class="card" data-login="no login" data-license="public domain tracks (no copyright) not required">
+      <h3><a href="https://freepd.com/" target="_blank" rel="noopener">FreePD (Free Public Domain)</a></h3>
+      <div class="badges">
+        <span class="badge">License: Public domain tracks (no copyright)</span>
+        <span class="badge">Login: No login</span>
+      </div>
+      <div class="meta"><strong>Best for:</strong> PD music organized by mood; simple licensing</div>
+      <p><strong>Attribution:</strong> Not required</p>
+      <p>Helpful for slideshows where attribution text is undesired</p>
+    </article>
+
+    <article class="card" data-login="no login to browse; account for downloads (if enabled)" data-license="creative commons (varies per track) often required; check license per track">
+      <h3><a href="https://soundcloud.com/search/sounds?q=&filter.license=to_share" target="_blank" rel="noopener">SoundCloud (Creative Commons filter)</a></h3>
+      <div class="badges">
+        <span class="badge">License: Creative Commons (varies per track)</span>
+        <span class="badge">Login: No login to browse; account for downloads (if enabled)</span>
+      </div>
+      <div class="meta"><strong>Best for:</strong> Community tracks; find CC BY tracks via filters</div>
+      <p><strong>Attribution:</strong> Often required; check license per track</p>
+      <p>Verify off‑platform permissions for uploads/edits</p>
+    </article>
+
+    <article class="card" data-login="required (paid)" data-license="subscription library (not free) not required with active license">
+      <h3><a href="https://www.epidemicsound.com" target="_blank" rel="noopener">Epidemic Sound (for awareness)</a></h3>
+      <div class="badges">
+        <span class="badge">License: Subscription library (not free)</span>
+        <span class="badge">Login: Required (paid)</span>
+      </div>
+      <div class="meta"><strong>Best for:</strong> High‑end projects; included for completeness</div>
+      <p><strong>Attribution:</strong> Not required with active license</p>
+      <p>Use only if your school/teacher account has an active license</p>
+    </article>
+  </section>
+</main>
+
+<footer class="page">
+  <p>✨✍️ Created by Panagiotis Domvros, English and Drama Teacher, All Rights Reserved ✍️✨</p>
+</footer>
+
+<script>
+  const q = document.getElementById('q');
+  const lic = document.getElementById('license');
+  const loginSel = document.getElementById('login');
+
+  function norm(s) { return (s || '').toLowerCase(); }
+
+  function filter() {
+    const term = norm(q.value);
+    const l = norm(lic.value);
+    const lg = norm(loginSel.value);
+
+    document.querySelectorAll('.card').forEach(card => {
+      const txt = norm(card.innerText);
+      const licTxt = norm(card.getAttribute('data-license'));
+      const logTxt = norm(card.getAttribute('data-login'));
+      const termOk = !term || txt.includes(term);
+      const licOk = !l || licTxt.includes(l) || 
+        (l === 'no attribution required' && licTxt.includes('not required')) ||
+        (l === 'attribution required' && licTxt.includes('required'));
+      const logOk = !lg || logTxt.includes(lg);
+      card.style.display = (termOk && licOk && logOk) ? '' : 'none';
+    });
+  }
+  q.addEventListener('input', filter);
+  lic.addEventListener('change', filter);
+  loginSel.addEventListener('change', filter);
+</script>
+</body>
+</html>
