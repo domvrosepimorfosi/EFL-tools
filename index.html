@@ -234,7 +234,7 @@ header .title{grid-column:2;grid-row:1;font-size:clamp(18px,1.8vw,22px);line-hei
 header .subtitle{grid-column:2;grid-row:2;font-size:12px;margin:0}
 </style>
 <style>
-/* Make 'Discuss the post' heading match h3 size */
+/* Make collapsible headings match h3 size */
 .summary-discuss{font-size:1.17em;font-weight:700;line-height:1.2;margin:0 0 10px;text-align:center}
 </style>
 </head>
@@ -255,6 +255,7 @@ header .subtitle{grid-column:2;grid-row:2;font-size:12px;margin:0}
   <button aria-controls="panel-home" aria-selected="true" class="tab" data-color="home" id="tab-home" role="tab">Home</button>
   <button aria-controls="panel-beyond" aria-selected="false" class="tab" data-color="c6" id="tab-beyond" role="tab">Beyond the &#39;Fun&#39; Factor</button>
   <button aria-controls="panel-c3" aria-selected="false" class="tab" data-color="c3" id="tab-c3" role="tab">ICT Lesson Planner</button>
+  <button aria-controls="panel-goldilocks" aria-selected="false" class="tab" data-color="c2" id="tab-goldilocks" role="tab">Goldilocks Tech Rule</button>
   <button aria-controls="panel-c4" aria-selected="false" class="tab" data-color="c4" id="tab-c4" role="tab">SAMR Analysis</button>
   <button aria-controls="panel-samr-applying" aria-selected="false" class="tab" data-color="c4" id="tab-samr-applying" role="tab">Applying the SAMR Model</button>
   <button aria-controls="panel-c5" aria-selected="false" class="tab" data-color="c5" id="tab-c5" role="tab">From Chalkboards to Chatbots</button>
@@ -273,18 +274,30 @@ header .subtitle{grid-column:2;grid-row:2;font-size:12px;margin:0}
 
 <main>
   <section aria-labelledby="tab-home" class="panel active" id="panel-home" role="tabpanel">
+    <details class="card" style="margin-bottom:12px">
+      <summary class="summary-discuss">The Teacher Make-up</summary>
+      <figure style="margin:0">
+        <a href="https://domvrosepimorfosi.github.io/teachermakeup/?lng=en" rel="noopener" target="_blank" title="Open Teacher Make-Up (English)">
+          <img alt="QR code: Teacher Make-Up" class="qr" src="teacher%20make%20up.png" style="width:380px !important; max-width:100% !important; height:auto !important; display:block; margin:12px auto"/>
+        </a>
+      </figure>
+    </details>
+
     <div class="grid2">
-      <div class="card qr-card">
-        <h3>Let's do little survey</h3>
+      <details class="card qr-card" style="margin-bottom:12px">
+        <summary class="summary-discuss">Let&#39;s do a little survey</summary>
         <a href="https://answergarden.ch/5081475" rel="noopener" target="_blank" title="Open AnswerGarden survey">
           <img alt="QR code: AnswerGarden survey" class="qr" src="answer garden.png" style="width:380px !important; max-width:100% !important; height:auto !important; display:block; margin:12px auto"/>
         </a>
-      </div>
+      </details>
     </div>
+
     <details class="card" style="margin-bottom:12px">
       <summary class="summary-discuss">Seminar Material</summary>
       <figure style="margin:0">
-        <img alt="Seminar material QR code" src="dissemination qr code.png" style="width:50%;height:auto;border:1px solid var(--border);border-radius:12px;display:block;margin:auto"/>
+        <a href="https://domvrosepimorfosi.github.io/bdd-dissemination/" rel="noopener" target="_blank" title="Open seminar material">
+          <img alt="Seminar material QR code" src="dissemination qr code.png" style="width:50%;height:auto;border:1px solid var(--border);border-radius:12px;display:block;margin:auto"/>
+        </a>
       </figure>
     </details>
   </section>
@@ -298,6 +311,15 @@ header .subtitle{grid-column:2;grid-row:2;font-size:12px;margin:0}
   <section aria-labelledby="tab-c3" class="panel" id="panel-c3" role="tabpanel">
     <div class="card" style="padding:0">
       <iframe id="frame-c3" src="https://domvrosepimorfosi.github.io/ICT-LessonPlanner/" style="width:100%;height:1200px;border:0" title="ICT Lesson Planner"></iframe>
+    </div>
+  </section>
+
+  <section aria-labelledby="tab-goldilocks" class="panel" id="panel-goldilocks" role="tabpanel">
+    <div class="card" style="padding:0">
+      <video controls style="width:50%;max-width:640px;height:auto;display:block;border-radius:16px;margin:0 auto">
+        <source src="The Goldilocks Tech Rule.mp4" type="video/mp4"/>
+        Your browser does not support the video tag.
+      </video>
     </div>
   </section>
 
